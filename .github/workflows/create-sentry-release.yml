@@ -7,9 +7,10 @@ jobs:
   create-sentry-release:
     strategy:
       matrix:
-        target: ['24.14']
+        target: ['22.6']
     uses: snapshot-labs/actions/.github/workflows/create-sentry-release.yml@main
     with:
       project: snapshot-hub
       target: ${{ matrix.target }}
+      package_manager: bun
     secrets: inherit
